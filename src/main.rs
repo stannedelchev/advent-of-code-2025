@@ -9,8 +9,8 @@ fn main() {
         Problem::Lines(Box::from(day01::Day01 {})),
         "Day01",
         "inputs/input01.txt",
-        "765748",
-        "27732508",
+        "1141",
+        "6634",
     )];
     for (problem, name, path, part1_solution, part2_solution) in problems {
             let file = std::fs::read_to_string(path).unwrap();
