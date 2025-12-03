@@ -1,9 +1,8 @@
-extern crate core;
-
 use crate::problem::Problem;
 
 mod day01;
 mod day02;
+mod day03;
 mod problem;
 
 fn main() {
@@ -21,6 +20,13 @@ fn main() {
             "inputs/input02.txt",
             "52316131093",
             "3",
+        ),
+        (
+            Problem::Lines(Box::from(day03::Day03 {})),
+            "Day03",
+            "inputs/input03.txt",
+            "17109",
+            "169347417057382",
         ),
     ];
     for (problem, name, path, part1_solution, part2_solution) in problems {
