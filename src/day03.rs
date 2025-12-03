@@ -32,15 +32,15 @@ impl ProblemLines for Day03 {
 struct BatteriesIterator<'a> {
     start: usize,
     end: usize,
-    string: &'a str,
+    bank: &'a str,
 }
 
 impl<'a> BatteriesIterator<'a> {
-    fn new(string: &'a str, length: usize) -> Self {
+    fn new(bank: &'a str, count: usize) -> Self {
         BatteriesIterator {
             start: 0,
-            end: string.len() - length + 1,
-            string,
+            end: bank.len() - count + 1,
+            bank,
         }
     }
 }
@@ -49,14 +49,14 @@ impl Iterator for BatteriesIterator<'_> {
     type Item = char;
 
     fn next(&mut self) -> Option<Self::Item> {
-        if self.end > self.string.len() {
+        if self.end > self.bank.len() {
             return None;
         }
 
-        let string = &self.string[self.start..self.end];
+        let bank = &self.bank[self.start..self.end];
 
         // Can't use max_by_key() because it returns the last element instead of the first
-        let (index, max) = string
+        let (index, max) = bank
             .char_indices()
             .fold((None, '\0'), |(index, max), (ix, c)| {
                 if c > max {
@@ -85,8 +85,8 @@ mod tests {
             ("92", "818181911112111", 2),
         ];
 
-        for (expected, string, length) in tests.into_iter() {
-            let actual = BatteriesIterator::new(string, length).collect::<String>();
+        for (expected, bank, length) in tests.into_iter() {
+            let actual = BatteriesIterator::new(bank, length).collect::<String>();
             assert_eq!(expected, actual);
         }
     }
@@ -100,8 +100,8 @@ mod tests {
             ("888911112111", "818181911112111", 12),
         ];
 
-        for (expected, string, length) in tests.into_iter() {
-            let actual = BatteriesIterator::new(string, length).collect::<String>();
+        for (expected, bank, length) in tests.into_iter() {
+            let actual = BatteriesIterator::new(bank, length).collect::<String>();
             assert_eq!(expected, actual);
         }
     }
