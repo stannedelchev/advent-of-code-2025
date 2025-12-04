@@ -3,6 +3,7 @@ use crate::problem::Problem;
 mod day01;
 mod day02;
 mod day03;
+mod day04;
 mod problem;
 
 fn main() {
@@ -26,6 +27,13 @@ fn main() {
             "Day03",
             "inputs/input03.txt",
             "17109",
+            "169347417057382",
+        ),
+        (
+            Problem::Lines(Box::from(day04::Day04 {})),
+            "Day03",
+            "inputs/input04.txt",
+            "1389",
             "169347417057382",
         ),
     ];
