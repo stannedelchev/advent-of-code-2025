@@ -34,7 +34,7 @@ fn main() {
             "Day03",
             "inputs/input04.txt",
             "1389",
-            "169347417057382",
+            "9000",
         ),
     ];
     for (problem, name, path, part1_solution, part2_solution) in problems {
