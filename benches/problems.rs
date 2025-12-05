@@ -38,8 +38,8 @@ pub fn day04(c: &mut Criterion) {
 pub fn day05(c: &mut Criterion) {
     let file = std::fs::read_to_string("inputs/input05.txt").unwrap();
     let problem = Day05 {};
-    c.bench_function("Day 05 Part 1", |b| b.iter(|| problem.part1(file.lines())));
-    c.bench_function("Day 05 Part 2", |b| b.iter(|| problem.part2(file.lines())));
+    c.bench_function("Day 05 Part 1", |b| b.iter(|| problem.part1(&file)));
+    c.bench_function("Day 05 Part 2", |b| b.iter(|| problem.part2(&file)));
 }
 
 criterion_group!(name = benches; config = Criterion::default().sample_size(1000); targets = day05);

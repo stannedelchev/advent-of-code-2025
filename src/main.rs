@@ -38,7 +38,7 @@ fn main() {
             "9000",
         ),
         (
-            Problem::Lines(Box::from(day05::Day05 {})),
+            Problem::String(Box::from(day05::Day05 {})),
             "Day05",
             "inputs/input05.txt",
             "638",
