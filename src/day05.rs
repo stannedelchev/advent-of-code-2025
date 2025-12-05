@@ -17,7 +17,9 @@ impl ProblemLines for Day05 {
                     ranges.ranges_insert(start..=end);
                 }
                 None => {
-                    if let Ok(ingredient) = line.parse() && ranges.contains(ingredient) {
+                    if let Ok(ingredient) = line.parse()
+                        && ranges.contains(ingredient)
+                    {
                         fresh += 1;
                     }
                 }
@@ -36,9 +38,9 @@ impl ProblemLines for Day05 {
                 })
             })
             .collect::<RangeSetBlaze<u64>>()
-            .into_ranges()
-            .map(|r| r.count() as u64)
-            .sum::<u64>()
+            .ranges()
+            .map(|r| r.count())
+            .sum::<usize>()
             .to_string()
     }
 }
