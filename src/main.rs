@@ -4,6 +4,7 @@ mod day01;
 mod day02;
 mod day03;
 mod day04;
+mod day05;
 mod problem;
 
 fn main() {
@@ -31,10 +32,17 @@ fn main() {
         ),
         (
             Problem::Lines(Box::from(day04::Day04 {})),
-            "Day03",
+            "Day04",
             "inputs/input04.txt",
             "1389",
             "9000",
+        ),
+        (
+            Problem::Lines(Box::from(day05::Day05 {})),
+            "Day05",
+            "inputs/input05.txt",
+            "638",
+            "352946349407338",
         ),
     ];
     for (problem, name, path, part1_solution, part2_solution) in problems {

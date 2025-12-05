@@ -2,6 +2,7 @@ use advent2025::day01::Day01;
 use advent2025::day02::Day02;
 use advent2025::day03::Day03;
 use advent2025::day04::Day04;
+use advent2025::day05::Day05;
 use advent2025::problem::{ProblemLines, ProblemString};
 
 use criterion::{criterion_group, criterion_main, Criterion};
@@ -34,5 +35,12 @@ pub fn day04(c: &mut Criterion) {
     c.bench_function("Day 04 Part 2", |b| b.iter(|| problem.part2(file.lines())));
 }
 
-criterion_group!(name = benches; config = Criterion::default().sample_size(1000); targets = day04);
+pub fn day05(c: &mut Criterion) {
+    let file = std::fs::read_to_string("inputs/input05.txt").unwrap();
+    let problem = Day05 {};
+    c.bench_function("Day 05 Part 1", |b| b.iter(|| problem.part1(file.lines())));
+    c.bench_function("Day 05 Part 2", |b| b.iter(|| problem.part2(file.lines())));
+}
+
+criterion_group!(name = benches; config = Criterion::default().sample_size(1000); targets = day05);
 criterion_main!(benches);

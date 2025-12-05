@@ -6,6 +6,7 @@ edition = "2024"
 [dependencies]
 criterion = "0.8.0"
 itertools = "0.14.0"
+range-set-blaze = "0.4.1"
 regex = "1.12.2"
 
 [[bench]]
